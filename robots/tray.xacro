@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tray">
+  <xacro:macro name="tray" params="connected_to:='' ns:='' rpy:='0 0 0' xyz:='0 0 0' ">
+    <xacro:unless value="${connected_to == ''}">
+      <joint name="${ns}_tray_fixed_joint" type="fixed">
+        <parent link="${connected_to}"/>
+        <child link="${ns}_tray_link"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
+      </joint>
+    </xacro:unless>
+    <link name="${ns}_tray_link">
+      <visual>
+        <geometry>
+            <box size="0.4 0.25 0.02"/>
+        </geometry>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      </visual>
+      <collision>
+        <geometry>
+            <box size="0.4 0.25 0.02"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0.0015244 0.0275912"/>
+        <mass value="0.73"/>
+        <inertia ixx="0.00278560230025" ixy="0.0" ixz="0.0" iyy="0.000400033405336" iyz="0.0" izz="0.00256378041832"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+</robot>
