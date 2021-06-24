@@ -252,7 +252,7 @@
     <parent link="ee_link"/>
     <child link="tray_link"/>
     <!-- <origin rpy="1.57 1.57 1.57" xyz="0.0 0. 0.135"/>  -->
-    <origin rpy="-1.620 -0.003 1.566" xyz="-0.018 0.023 0.197"/>
+    <origin rpy="-1.560 -0.036 1.593" xyz="0.002 -0.032 0.131"/>
 
   </joint>
 
