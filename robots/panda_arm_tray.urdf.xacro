@@ -7,11 +7,14 @@
   
   <xacro:include filename="$(find franka_panda_description)/robots/panda_arm.xacro"/>
 
-  <xacro:include filename="$(find franka_panda_description)/robots/hand.xacro"/>
-  <xacro:hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8"/>
+  <!-- <xacro:include filename="$(find franka_panda_description)/robots/hand.xacro"/> -->
+  <!-- <xacro:hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8"/> -->
 
   <xacro:include filename="$(find franka_panda_description)/robots/tray.xacro"/>
-  <xacro:tray ns="panda" rpy="-1.620 -0.003 1.566" xyz="-0.018 0.023 0.197" connected_to="panda_hand"/>
+  <!-- <xacro:tray ns="panda" rpy="-1.549 -0.002 0.037" xyz="-0.033 -0.016 0.284" connected_to="panda_hand"/> -->
+  <!-- <xacro:tray ns="panda" rpy="-1.600 -0.030 0.049" xyz="-0.035 0.014 0.230" connected_to="panda_link8"/> -->
+  <!-- <xacro:tray ns="panda" rpy="-1.613 -0.030 -0.751" xyz="-0.031 0.026 0.229" connected_to="panda_link8"/> -->
+  <xacro:tray ns="panda" rpy="-1.585 -0.030 -0.755" xyz="-0.020 0.020 0.231" connected_to="panda_link8"/>
 
   <xacro:if value="$(arg load_gazebo)">  
     <xacro:include filename="$(find franka_panda_description)/robots/panda.gazebo.xacro"/>
