@@ -218,18 +218,50 @@
       <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100"/>
       <dynamics damping="1.0" friction="0.5"/>
     </joint>
-    <link name="${arm_id}_link8">
+    <!-- <link name="${arm_id}_link8">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="0.0"/>
         <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
       </inertial>
-    </link>
-    <joint name="${arm_id}_joint8" type="fixed">      
+    </link> -->
+    <!-- <joint name="${arm_id}_joint8" type="fixed">      
     <origin rpy="0 0 0" xyz="0 0 0.107"/>
       <parent link="${arm_id}_link7"/>
       <child link="${arm_id}_link8"/>
       <axis xyz="0 0 0"/>
+    </joint> -->
+    <link name="${arm_id}_link8">
+      <inertial>
+        <origin xyz="-1.57 0.0 0.0" rpy="0 0 0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+    </link>
+    <joint name="${arm_id}_joint8" type="fixed">      
+      <origin rpy="0 0 -0.785398163397" xyz="0 0 0.107"/>
+      <parent link="${arm_id}_link7"/>
+      <child link="${arm_id}_link8"/>
+      <axis xyz="0 0 0"/>
     </joint>
+
+  <joint name="ee_fixed_joint" type="fixed">
+    <parent link="${arm_id}_link8"/>
+    <child link="ee_link"/>
+    <!--origin rpy="0.0 0.0 1.570796325" xyz="0.0 0.0922 0.0"/-->
+    <!--origin rpy="-1.57 0.0 1.57" xyz="0.0 0. 0.0"/-->
+    <origin rpy="0.0 0.0 -1.57" xyz="0.0 0. 0.1"/> 
+  </joint>
+
+  <link name="ee_link">
+    <collision>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <origin rpy="0 0 0" xyz="0.0 0 0"/>
+    </collision>
+  </link>
+
   </xacro:macro>
 </robot>

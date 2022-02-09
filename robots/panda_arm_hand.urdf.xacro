@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
   <xacro:arg name="robot_name" default="panda"/>
   <xacro:arg name="load_gripper" default="true"/>
   <xacro:arg name="load_gazebo" default="false"/>
   <xacro:arg name="use_gazebo_control" default="false"/>
-  <xacro:arg name="connected_to" default=""/> <!-- If using a different frame with ${connected_to} param, make sure 'world' frame exists in the TF tree -->
+  <xacro:arg name="connected_to" default="world"/> 
   
   <xacro:include filename="$(find franka_panda_description)/robots/panda_arm.xacro"/>
 
